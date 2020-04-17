@@ -1,6 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container flex flex-col">
     <nuxt-link to="/users">Users</nuxt-link>
+    <nuxt-link to="/posts">Posts</nuxt-link>
+    <nuxt-link to="/about">About</nuxt-link>
   </div>
 </template>
 
