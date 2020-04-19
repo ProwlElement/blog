@@ -44,5 +44,6 @@ export default {
 .post-thumbnail {
   height: 200px;
   width: 100%;
+  -webkit-filter: grayscale(60%);
 }
 </style>

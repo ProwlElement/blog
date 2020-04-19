@@ -10,10 +10,11 @@
 need to research if this is correct or not https://tailwindcss.com/docs/adding-base-styles/ */
 html,body {
   background-color: #454343;
+  color: azure;
 }
 
 h1 {
-  @apply text-3xl text-gray-500;
+  @apply text-3xl;
   font-family: upgrade, sans-serif;
   font-weight: 500;
   font-style: normal;
