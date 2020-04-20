@@ -1,5 +1,5 @@
 <template>
-  <div class="mobile-menu-container h-screen bg-gray-900">
+  <div class="mobile-menu-container">
     <div class="overlay h-screen w-screen bg-gray-900 z-40"></div>
     <div class="flex flex-col justify-center h-screen items-center mx-auto text-4xl relative z-50">
       <nuxt-link to="/users">Users</nuxt-link>
