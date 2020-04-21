@@ -1,6 +1,12 @@
 <template>
-  <div class="hamburger-container">
-    <button class="hamburger hamburger--3dx" type="button">
+  <div class="hamburger-container" @click="$emit('toggle')">
+    <button
+      id="button"
+      class="hamburger hamburger--3dx"
+      type="button"
+      @click="isActive = !isActive"
+      :class="{'is-active': isActive }"
+    >
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>
       </span>
@@ -9,7 +15,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      isActive: false
+    };
+  }
+};
 </script>
 
 <style scoped>

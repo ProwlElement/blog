@@ -2,7 +2,7 @@
   <div>
     <!-- nav goes here -->
     <TheMenu @mobileToggle="showMobileMenu = !showMobileMenu" />
-    <TheMobileMenu :show="showMobileMenu" />
+    <TheMobileMenu :show="showMobileMenu" @close="showMobileMenu = !showMobileMenu" />
     <nuxt />
   </div>
 </template>

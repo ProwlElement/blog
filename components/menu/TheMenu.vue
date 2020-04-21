@@ -7,10 +7,7 @@
         </nuxt-link>
       </div>
       <div class="flex items-center">
-        <nuxt-link to="/users" class="flex-item">Users</nuxt-link>
-        <nuxt-link to="/posts" class="flex-item">Posts</nuxt-link>
-        <nuxt-link to="/about" class="flex-item">About</nuxt-link>
-        <TheHamburger @toggle="$emit('showMobileMenu')" />
+        <TheHamburger @toggle="$emit('mobileToggle')" />
       </div>
     </header>
   </div>
@@ -27,7 +24,7 @@ export default {
 
 <style>
 .header-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 70px;
   width: 100%;
