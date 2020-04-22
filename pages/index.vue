@@ -1,11 +1,15 @@
-<template></template>
+<template>
+  <WideImageText />
+</template>
 
 <script>
+import WideImageText from "@/components/banners/WideImageText";
+export default {
+  components: {
+    WideImageText
+  }
+};
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS */
-/* .container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-} */
 </style>

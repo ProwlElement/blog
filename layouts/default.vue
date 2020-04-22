@@ -4,17 +4,20 @@
     <TheMenu @mobileToggle="showMobileMenu = !showMobileMenu" />
     <TheMobileMenu :show="showMobileMenu" @close="showMobileMenu = !showMobileMenu" />
     <nuxt />
+    <TheFooter />
   </div>
 </template>
 
 <script>
 import TheMenu from "@/components/menu/TheMenu";
 import TheMobileMenu from "@/components/menu/TheMobileMenu";
+import TheFooter from "@/components/footer/TheFooter";
 
 export default {
   components: {
     TheMenu,
-    TheMobileMenu
+    TheMobileMenu,
+    TheFooter
   },
   data() {
     return {
