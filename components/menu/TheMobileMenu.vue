@@ -10,7 +10,7 @@
         :class="{'animate-menu': show}"
         @click="$emit('close')"
       >
-        <nuxt-link to="/users">Users</nuxt-link>
+        <nuxt-link to="/admin">Admin</nuxt-link>
         <nuxt-link to="/posts">Posts</nuxt-link>
         <nuxt-link to="/about">About</nuxt-link>
       </div>
@@ -43,6 +43,7 @@ export default {
 
 .mobile-menu-container {
   position: fixed;
+  right: 0;
   /* max-width: 300px; */
 }
 
@@ -66,7 +67,7 @@ export default {
 }
 
 .slide-enter {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 
 .slide-enter-to {
@@ -74,7 +75,7 @@ export default {
 }
 
 .slide-leave-to {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 
 a.nuxt-link-active {
