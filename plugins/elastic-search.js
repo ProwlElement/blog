@@ -1,5 +1,5 @@
 import Vue from "vue";
-import VueRs from "@appbaseio/reactivesearch-vue";
+import ReactiveSearch from "@appbaseio/reactivesearch-vue";
 
-Vue.config.productionTip = false;
-Vue.use(VueRs);
+// Vue.config.productionTip = false;
+Vue.use(ReactiveSearch);
