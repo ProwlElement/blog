@@ -1,9 +1,8 @@
 <template>
   <div class="admin-page container mx-auto py-32">
     <section>
-      <button
-        class="bg-transparent hover:bg-green-600 text-green-600 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded-full"
-      >Create Post</button>
+      <h1>Admin</h1>
+      <TheButton btnTitle="Create Bob" />
     </section>
     <section>
       <h1>Existing Posts</h1>
@@ -14,9 +13,12 @@
 
 <script>
 import PostList from "@/components/posts/PostList";
+import TheButton from "@/components/buttons/TheButton";
+
 export default {
   components: {
-    PostList
+    PostList,
+    TheButton
   }
 };
 </script>
