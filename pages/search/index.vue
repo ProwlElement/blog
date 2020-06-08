@@ -3,39 +3,40 @@
     <section class="search-container py-32">Search Here</section>
     <section>
       <h1 class="text-white">Hello from Vendorconex 👋</h1>
-      <ReactiveBase
+      <!-- <ReactiveBase
         app="gitxplore-app"
         credentials="4oaS4Srzi:f6966181-1eb4-443c-8e0e-b7f38e7bc316"
         type="gitxplore-latest"
+      >-->
+
+      <ReactiveBase
+        app="partner-search-k4k4hj4kh"
+        credentials="HcGvQDLRN:cd2b5eb2-f976-4497-ba51-b04c6705ce1d"
       >
         <!-- search input -->
         <DataSearch
           componentId="repo"
           filterLabel="Search"
           :dataField="[
-            'name',
-            'description',
-            'name.raw',
-            'fullname',
-            'owner',
-            'topics'
+            'Name',
+            'Category',
+            'Website'
           ]"
-          placeholder="Search Repos"
+          placeholder="Search Partners"
           iconPosition="left"
           :autosuggest="true"
           URLParams
           class="data-search-container results-container"
           :innerClass="{
-            input: 'search-input'
+            input: 'search-input' 
           }"
         />
 
         <MultiDropdownList
-          componentId="language"
-          data-field="language.raw"
-          placeholder="Select languages"
-          title="Language"
-          filterLabel="Language"
+          componentId="category"
+          data-field="Category.raw"
+          placeholder="Select Category"
+          title="Category"
           :innerClass="{
             select: 'dropdown-select',
             title: 'inner-title',
@@ -46,7 +47,7 @@
         <SelectedFilters class="m1" />
         <ReactiveList
           componentId="results"
-          data-field="name.raw"
+          data-field="Name.raw"
           :pagination="true"
           :from="0"
           :size="6"
@@ -57,7 +58,7 @@
                 poweredBy: 'powered-by'
               }"
           :react="{
-                and: ['language', 'topics', 'repo', 'stars', 'forks']
+                and: ['repo', 'category', 'website']
               }"
         >
           <div slot="renderResultStats" slot-scope="{ total, time }">
@@ -68,46 +69,15 @@
           <div slot="renderItem" slot-scope="{ item }">
             <div key="{{item.name}}" class="result-item">
               <div class="flex align-center result-card-header">
-                <img class="avatar" :src="item.avatar" alt="User avatar" />
-                <a class="link" :href="item.url" target="_blank" rel="noopener noreferrer">
+                <img class="avatar" :src="item.Logo_url" alt="User avatar" />
+                <a class="link" :href="item.Website" target="_blank" rel="noopener noreferrer">
                   <div class="flex wrap">
-                    <div>{{ item.owner }}/</div>
-                    <div>{{ item.name }}</div>
+                    <div>{{ item.Category }}/</div>
+                    <div>{{ item.Name }}</div>
                   </div>
                 </a>
               </div>
               <div class="m10-0">{{ item.description }}</div>
-              <div class="flex wrap">
-                <div
-                  v-for="(tag, index) in item.topics.slice(0, 7)"
-                  :key="index"
-                  v-bind:class="[
-                        currentTopics.includes(tag) ? 'active' : '',
-                        'topic'
-                      ]"
-                  @click="toggleTopic(tag);"
-                >#{{ tag }}</div>
-              </div>
-              <div class="flex">
-                <div>
-                  <div class="btn card-btn">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    {{ item.stars }}
-                  </div>
-                </div>
-                <div>
-                  <div class="btn card-btn">
-                    <i class="fa fa-code-fork" aria-hidden="true"></i>
-                    {{ item.forks }}
-                  </div>
-                </div>
-                <div>
-                  <div class="btn card-btn">
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                    {{ item.watchers }}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </ReactiveList>
