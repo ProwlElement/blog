@@ -2,7 +2,7 @@
   <div class="admin-page container mx-auto py-32">
     <section>
       <h1>Admin</h1>
-      <TheButton btnTitle="Create Bob" />
+      <AppButton @click="$router.push('/admin/create-post')">Create New Post</AppButton>
     </section>
     <section>
       <h1>Existing Posts</h1>
@@ -13,12 +13,12 @@
 
 <script>
 import PostList from "@/components/posts/PostList";
-import TheButton from "@/components/buttons/TheButton";
+import AppButton from "@/components/UI/AppButton";
 
 export default {
   components: {
     PostList,
-    TheButton
+    AppButton
   }
 };
 </script>
