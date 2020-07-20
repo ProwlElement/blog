@@ -21,7 +21,7 @@ export default {
 
 <style scoped>
 #banner {
-  height: 55vw;
+  height: 60vw;
   width: 100%;
   top: 0;
   overflow: visible;

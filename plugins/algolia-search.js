@@ -1,34 +1,3 @@
-<template>
-  <div class="container mx-auto mt-32">
-    <ais-instant-search-ssr>
-      <ais-search-box />
-      <ais-pagination />
-      <ais-state-results>
-        <div slot-scope="{ query }">
-          <div v-if="query.length">
-            <ais-hits>
-              <template slot="item" slot-scope="{ item }">
-                <h2>
-                  <ais-highlight attribute="Name" :hit="item" />
-                </h2>
-                <h3>
-                  <ais-highlight attribute="Category" :hit="item" />
-                </h3>
-                <p>
-                  <ais-highlight attribute="Country" :hit="item" />
-                </p>
-              </template>
-            </ais-hits>
-          </div>
-        </div>
-      </ais-state-results>
-
-      <ais-pagination />
-    </ais-instant-search-ssr>
-  </div>
-</template>
-
-<script>
 import {
   AisInstantSearchSsr,
   AisIndex,
@@ -39,8 +8,7 @@ import {
   AisSearchBox,
   AisStats,
   AisPagination,
-  createServerRootMixin,
-  AisStateResults
+  createServerRootMixin
 } from "vue-instantsearch"; // eslint-disable-line import/no-unresolved
 import algoliasearch from "algoliasearch/lite";
 
@@ -74,8 +42,7 @@ export default {
     AisHighlight,
     AisSearchBox,
     AisStats,
-    AisPagination,
-    AisStateResults
+    AisPagination
   },
   head() {
     return {
@@ -89,16 +56,5 @@ export default {
     };
   }
 };
-</script>
 
-<style>
-.ais-Hits-list {
-  text-align: left;
-}
-.ais-Hits-list:empty {
-  margin: 0;
-}
-.ais-InstantSearch {
-  margin: 1em;
-}
-</style>
+
