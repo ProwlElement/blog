@@ -26,12 +26,16 @@ export default {
 
 <style scoped>
 .hamburger-container {
-  margin: 10px 0;
+  margin: 0px 0;
 }
 .hamburger-container .hamburger-inner,
 .hamburger-container .hamburger-inner::after,
 .hamburger-container .hamburger-inner::before {
   background-color: white;
   height: 2px;
+}
+
+.hamburger {
+  padding: 0;
 }
 </style>

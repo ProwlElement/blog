@@ -6,20 +6,26 @@
     <transition name="slide">
       <div
         v-if="show"
-        class="link-container flex flex-col justify-center h-screen items-center mx-auto text-2xl relative bg-gray-900 z-50"
+        class="link-container flex flex-col justify-center h-screen items-center mx-auto text-2xl relative bg-gray-700 z-50"
         :class="{'animate-menu': show}"
         @click="$emit('close')"
       >
-        <nuxt-link to="/admin">Admin</nuxt-link>
-        <nuxt-link to="/posts">Posts</nuxt-link>
+        <nuxt-link to="index.html">Home</nuxt-link>
         <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link to="/posts">Posts</nuxt-link>
+        <nuxt-link to="/admin">Admin</nuxt-link>
       </div>
     </transition>
   </div>
 </template>
 
 <script>
+import iconAnnouncement from "heroicons-ui/icons/icon-announcement.svg";
+
 export default {
+  components: {
+    iconAnnouncement
+  },
   name: "TheMobileMenu",
   props: {
     show: {

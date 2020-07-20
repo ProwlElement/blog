@@ -30,7 +30,7 @@ export default {
 <style>
 html,
 body {
-  background-color: #454343;
+  /* background-color: #454343; */
   color: azure;
 }
 

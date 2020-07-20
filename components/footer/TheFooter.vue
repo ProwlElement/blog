@@ -30,7 +30,7 @@
           </ul>
         </div>
         <nuxt-link to="/">
-          <img src="~/assets/images/logo.png" alt />
+          <img class="w-64" src="~/assets/images/logo_purple.png" alt />
         </nuxt-link>
       </div>
     </div>

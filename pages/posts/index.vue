@@ -1,6 +1,6 @@
 <template>
   <div>
-    <WideImageText />
+    <WideImageHero />
     <div class="posts-page container flex flex-col justify-center items-center mx-auto">
       <PostList />
     </div>
@@ -9,12 +9,12 @@
 
 <script>
 import PostList from "@/components/posts/PostList";
-import WideImageText from "@/components/banners/WideImageText";
+import WideImageHero from "@/components/Sections/WideImageHero";
 
 export default {
   components: {
     PostList,
-    WideImageText
+    WideImageHero
   }
 };
 </script>

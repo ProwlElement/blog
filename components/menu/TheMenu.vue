@@ -3,11 +3,19 @@
     <header class="header container flex justify-between items-center mx-auto">
       <div class="logo">
         <nuxt-link to="/">
-          <img src="~/assets/images/logo.png" alt />
+          <img src="~/assets/images/logo_purple.png" alt />
         </nuxt-link>
       </div>
-      <div class="flex items-center">
-        <TheHamburger @toggle="$emit('mobileToggle')" />
+
+      <div class="flex justify-center">
+        <nuxt-link to="/">
+          <iconAnnouncement />Home
+        </nuxt-link>
+        <nuxt-link to="/about">About</nuxt-link>
+
+        <nuxt-link to="/posts">Posts</nuxt-link>
+        <nuxt-link to="/admin">Admin</nuxt-link>
+        <!-- <TheHamburger @toggle="$emit('mobileToggle')" /> -->
       </div>
     </header>
   </div>
@@ -24,16 +32,18 @@ export default {
 
 <style>
 .header-container {
-  position: fixed;
+  position: absolute;
+  display: flex;
+  justify-content: center;
   top: 0;
-  height: 70px;
+  height: 60px;
   width: 100%;
   z-index: 999999;
 }
 
 .logo img {
-  height: 50px;
-  margin: 10px 0;
+  height: 30px;
+  margin: 0px 0;
 }
 .flex-item {
   margin-left: 20px;

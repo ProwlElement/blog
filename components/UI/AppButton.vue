@@ -1,6 +1,6 @@
 <template>
   <button
-    class="button bg-transparent hover:bg-green-600 text-green-600 font-semibold hover:text-white py-2 px-4 border border-green-600 hover:border-transparent rounded-full"
+    class="button bg-transparent hover:bg-white text-white font-semibold hover:text-gray-900 py-3 px-16 border border-white hover:border-transparent rounded-full"
     :class="btnStyle"
     v-bind="$attrs"
     v-on="$listeners"
@@ -25,5 +25,9 @@ export default {
 <style scoped>
 .cancel {
   /* @apply bg-red-600 border-red-600; */
+}
+
+button {
+  max-width: 250px;
 }
 </style>
