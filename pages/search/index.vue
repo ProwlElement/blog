@@ -1,29 +1,49 @@
 <template>
   <div class="container mx-auto mt-32">
-    <ais-instant-search-ssr>
-      <ais-search-box />
-      <ais-pagination />
+    <ais-instant-search-ssr
+      :search-client="searchClient"
+      index-name="test_PARTNERS"
+      :routing="routing"
+    >
+      <ais-search-box
+        placeholder="e.g. Salesforce, CRM"
+        :classNames="{
+          'ais-SearchBox': 'w-64',
+          'ais-SearchBox-input': 'border-2 border-gray-700 rounded-full p-2 px-4 text-lg',
+          'ais-SearchBox-submit': 'hidden',
+          'ais-SearchBox-reset': 'hidden'
+        }"
+      />
+
       <ais-state-results>
         <div slot-scope="{ query }">
           <div v-if="query.length">
+            <!-- STATS -->
+            <ais-stats>
+              <h1
+                class="text-md mb-10 text-gray-700"
+                slot-scope="{ nbHits }"
+              >Found {{ nbHits }} results</h1>
+            </ais-stats>
+            <!-- DISPLAY HITS -->
             <ais-hits>
-              <template slot="item" slot-scope="{ item }">
-                <h2>
-                  <ais-highlight attribute="Name" :hit="item" />
-                </h2>
-                <h3>
-                  <ais-highlight attribute="Category" :hit="item" />
-                </h3>
-                <p>
-                  <ais-highlight attribute="Country" :hit="item" />
-                </p>
-              </template>
+              <div slot="item" slot-scope="{ item }">
+                <AppSearchCard :item="item" />
+              </div>
             </ais-hits>
+            <!-- PAGNATION -->
+            <ais-pagination />
+          </div>
+          <div v-else>
+            <div class="bg-grey-200 w-full h-screen flex justify-center align-center">
+              <h1
+                class="mt-8 text-gray-700"
+              >Find the perfect technical software provider for your business.</h1>
+              <img class="pb-64" src="~/assets/svg/search.svg" alt />
+            </div>
           </div>
         </div>
       </ais-state-results>
-
-      <ais-pagination />
     </ais-instant-search-ssr>
   </div>
 </template>
@@ -43,6 +63,9 @@ import {
   AisStateResults
 } from "vue-instantsearch"; // eslint-disable-line import/no-unresolved
 import algoliasearch from "algoliasearch/lite";
+import AppSearchCard from "@/components/UI/AppSearchCard";
+import { history as historyRouter } from "instantsearch.js/es/lib/routers";
+import { singleIndex as singleIndexMapping } from "instantsearch.js/es/lib/stateMappings";
 
 const searchClient = algoliasearch(
   "0ON7BV9ERS",
@@ -53,6 +76,10 @@ export default {
   mixins: [
     createServerRootMixin({
       searchClient,
+      routing: {
+        router: historyRouter(),
+        stateMapping: singleIndexMapping("test_PARTNERS")
+      },
       indexName: "test_PARTNERS"
     })
   ],
@@ -75,7 +102,8 @@ export default {
     AisSearchBox,
     AisStats,
     AisPagination,
-    AisStateResults
+    AisStateResults,
+    AppSearchCard
   },
   head() {
     return {
