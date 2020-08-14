@@ -8,9 +8,7 @@
       </div>
 
       <div class="flex justify-center">
-        <nuxt-link to="/">
-          <iconAnnouncement />Home
-        </nuxt-link>
+        <nuxt-link to="/">Home</nuxt-link>
         <nuxt-link to="/about">About</nuxt-link>
 
         <nuxt-link to="/posts">Posts</nuxt-link>

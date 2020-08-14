@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import iconAnnouncement from "heroicons-ui/icons/icon-announcement.svg";
+//import iconAnnouncement from "heroicons-ui/icons/icon-announcement.svg";
 
 export default {
   components: {
-    iconAnnouncement
+    //iconAnnouncement
   },
   name: "TheMobileMenu",
   props: {

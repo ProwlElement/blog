@@ -1,10 +1,6 @@
 <template>
   <div class="container mx-auto mt-32">
-    <ais-instant-search-ssr
-      :search-client="searchClient"
-      index-name="test_PARTNERS"
-      :routing="routing"
-    >
+    <ais-instant-search-ssr>
       <ais-search-box
         placeholder="e.g. Salesforce, CRM"
         :classNames="{
@@ -64,8 +60,6 @@ import {
 } from "vue-instantsearch"; // eslint-disable-line import/no-unresolved
 import algoliasearch from "algoliasearch/lite";
 import AppSearchCard from "@/components/UI/AppSearchCard";
-import { history as historyRouter } from "instantsearch.js/es/lib/routers";
-import { singleIndex as singleIndexMapping } from "instantsearch.js/es/lib/stateMappings";
 
 const searchClient = algoliasearch(
   "0ON7BV9ERS",
@@ -76,10 +70,6 @@ export default {
   mixins: [
     createServerRootMixin({
       searchClient,
-      routing: {
-        router: historyRouter(),
-        stateMapping: singleIndexMapping("test_PARTNERS")
-      },
       indexName: "test_PARTNERS"
     })
   ],

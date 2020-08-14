@@ -11,6 +11,7 @@ import {
   createServerRootMixin
 } from "vue-instantsearch"; // eslint-disable-line import/no-unresolved
 import algoliasearch from "algoliasearch/lite";
+import
 
 const searchClient = algoliasearch(
   "0ON7BV9ERS",
